@@ -1,48 +1,111 @@
-## Minimal UI ([Free version](https://free.minimals.cc/))
+# CHAU - Call Handling and Analytics UI
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+A modern web application for managing and monitoring call center operations, built with React and Material-UI.
 
-![preview](public/assets/images/minimal-free-preview.jpg)
+## Features
 
-> Free React Admin Dashboard made with Material-UI components and React + Vite.js.
+- 📞 Softphone Integration with Twilio
+  - Multi-step configuration wizard
+  - Support for multiple phone numbers
+  - Real-time call handling
+  - Inbound and outbound call management
 
-## Pages
+- 💬 Livechat Integration
+  - Embedded Qonvo.ai interface
+  - Seamless chat experience
+  - Real-time messaging
 
-- [Dashboard](https://free.minimals.cc/)
-- [Users](https://free.minimals.cc/user)
-- [Products](https://free.minimals.cc/products)
-- [Blog](https://free.minimals.cc/blog)
-- [Sign in](https://free.minimals.cc/sign-in)
-- [Not found](https://free.minimals.cc/404)
+- 🎯 Navigation & Layout
+  - Intuitive grid menu system
+  - Quick access to main features
+  - Responsive sidebar navigation
+  - Modern Material UI components
 
-## Quick start
+- 📊 Call Analytics Dashboard
+  - Real-time metrics
+  - Historical call data
+  - Performance insights
 
-- Clone the repo: `git clone https://github.com/minimal-ui-kit/material-kit-react.git`
-- Recommended: `Node.js v20.x`
-- **Install:** `npm i` or `yarn install`
-- **Start:** `npm run dev` or `yarn dev`
-- **Build:** `npm run build` or `yarn build`
-- Open browser: `http://localhost:3039`
+- 🎨 Modern UI/UX
+  - Material Design
+  - Responsive layout
+  - Dark/light mode support
 
-## Upgrade to PRO Version
+## Getting Started
 
-| Minimal Free                | [Minimal Pro](https://material-ui.com/store/items/minimal-dashboard/)                                   |
-| :-------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **6** Pages                 | **70+** Pages                                                                                           |
-| **Partial** theme customize | **Fully** theme customize                                                                               |
-| -                           | **Next.js** version                                                                                     |
-| -                           | **TypeScript** version (Standard Plus and Extended license)                                             |
-| -                           | Design **Figma** file (Standard Plus and Extended license)                                              |
-| -                           | Authentication with **Amplify**, **Auth0**, **JWT**, **Firebase** and **Supabase**                      |
-| -                           | Light/dark mode, right-to-left, form validation... ([+more components](https://minimals.cc/components)) |
-| -                           | Complete users flows                                                                                    |
-| -                           | 1 year of free updates / 6 months of technical support                                                  |
-| -                           | Learn more: [Package & license](https://docs.minimals.cc/package)                                       |
+### Prerequisites
+
+- Node.js >= 16.x
+- npm >= 8.x
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/CHAU.git
+cd CHAU
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Set up environment variables
+```bash
+cp .env.example .env
+```
+Edit `.env` with your configuration:
+- Twilio credentials
+- API endpoints
+- Other environment-specific settings
+
+4. Start the development server
+```bash
+npm run dev
+```
+
+## Navigation
+
+The application features a streamlined navigation system:
+
+1. Main Menu
+   - Quick access to the main dashboard
+   - Overview of key metrics and features
+
+2. Agent Tools
+   - Access to agent-specific functionalities
+   - Performance monitoring tools
+
+3. Configure Softphone
+   - Multi-step setup wizard
+   - Phone system configuration
+
+4. Livechat
+   - Integrated Qonvo.ai chat interface
+   - Real-time customer communication
+
+## Configuration
+
+The application requires initial setup through the configuration wizard:
+
+1. Configure inbound/outbound call settings
+2. Enter Twilio credentials
+3. Select phone numbers
+4. Set up Ngrok URL for webhooks
+5. Review and confirm settings
+
+## Documentation
+
+For detailed documentation, please refer to:
+- [User Guide](./docs/user-guide.md)
+- [API Documentation](./docs/api.md)
+- [Development Guide](./docs/development.md)
+
+## Contributing
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## License
 
-Distributed under the [MIT](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) license.
-
-## Contact us
-
-Email: support@minimals.cc
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

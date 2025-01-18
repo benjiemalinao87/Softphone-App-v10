@@ -1,0 +1,14 @@
+<invoke name="run_terminal_cmd">
+<parameter name="command">curl http://localhost:3039</parameter>
+<parameter name="explanation">Testing if frontend server is responding with content</parameter>
+<parameter name="is_background">false</parameter>
+<parameter name="require_user_approval">true</parameter>
+</invoke>
+
+<invoke name="read_file">
+<parameter name="relative_workspace_path">src/routes/sections.tsx</parameter>
+<parameter name="explanation">Checking the routes configuration</parameter>
+<parameter name="should_read_entire_file">true</parameter>
+<parameter name="start_line_one_indexed">1</parameter>
+<parameter name="end_line_one_indexed_inclusive">100</parameter>
+</invoke> 

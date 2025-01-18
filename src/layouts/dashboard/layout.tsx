@@ -1,14 +1,21 @@
 import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
+import type { ReactNode } from 'react';
 
 import { useState } from 'react';
 
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert';
 import { useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 
 import { _langs, _notifications } from 'src/_mock';
-
 import { Iconify } from 'src/components/iconify';
+import { useRouter } from 'src/routes/hooks';
+import { FloatingCallUI } from 'src/sections/overview/calls/components/floating-call-ui';
 
 import { Main } from './main';
 import { layoutClasses } from '../classes';
@@ -27,7 +34,7 @@ import { NotificationsPopover } from '../components/notifications-popover';
 
 export type DashboardLayoutProps = {
   sx?: SxProps<Theme>;
-  children: React.ReactNode;
+  children: ReactNode;
   header?: {
     sx?: SxProps<Theme>;
   };
@@ -35,10 +42,33 @@ export type DashboardLayoutProps = {
 
 export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) {
   const theme = useTheme();
+  const router = useRouter();
 
   const [navOpen, setNavOpen] = useState(false);
+  const [gridMenuAnchor, setGridMenuAnchor] = useState<null | HTMLElement>(null);
 
   const layoutQuery: Breakpoint = 'lg';
+
+  const handleGridMenuClick = (option: string) => {
+    setGridMenuAnchor(null);
+    
+    switch (option) {
+      case 'main':
+        router.push('/');
+        break;
+      case 'configure-softphone':
+        router.push('/configure-softphone');
+        break;
+      case 'agent-tools':
+        router.push('/agent-tools');
+        break;
+      case 'livechat':
+        router.push('/livechat');
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <LayoutSection
@@ -80,9 +110,50 @@ export function DashboardLayout({ sx, children, header }: DashboardLayoutProps) 
             ),
             rightArea: (
               <Box gap={1} display="flex" alignItems="center">
-                <Searchbar />
-                <LanguagePopover data={_langs} />
-                <NotificationsPopover data={_notifications} />
+                <IconButton
+                  onClick={(event) => setGridMenuAnchor(event.currentTarget)}
+                  sx={{ color: 'text.primary' }}
+                >
+                  <Iconify icon="solar:widget-2-bold-duotone" width={24} />
+                </IconButton>
+
+                <Menu
+                  anchorEl={gridMenuAnchor}
+                  open={Boolean(gridMenuAnchor)}
+                  onClose={() => setGridMenuAnchor(null)}
+                  transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                  PaperProps={{
+                    sx: { width: 240, mt: 0.5 },
+                  }}
+                >
+                  <MenuItem onClick={() => handleGridMenuClick('main')}>
+                    <ListItemIcon>
+                      <Iconify icon="solar:home-2-bold-duotone" width={24} />
+                    </ListItemIcon>
+                    <ListItemText primary="Main" />
+                  </MenuItem>
+                  <MenuItem onClick={() => handleGridMenuClick('agent-tools')}>
+                    <ListItemIcon>
+                      <Iconify icon="solar:widget-bold-duotone" width={24} />
+                    </ListItemIcon>
+                    <ListItemText primary="Agent Tools" />
+                  </MenuItem>
+                  <MenuItem onClick={() => handleGridMenuClick('configure-softphone')}>
+                    <ListItemIcon>
+                      <Iconify icon="solar:phone-bold-duotone" width={24} />
+                    </ListItemIcon>
+                    <ListItemText primary="Configure Softphone" />
+                  </MenuItem>
+                  <MenuItem onClick={() => handleGridMenuClick('livechat')}>
+                    <ListItemIcon>
+                      <Iconify icon="solar:chat-round-dots-bold-duotone" width={24} />
+                    </ListItemIcon>
+                    <ListItemText primary="Livechat" />
+                  </MenuItem>
+                </Menu>
+
+                <FloatingCallUI />
                 <AccountPopover
                   data={[
                     {

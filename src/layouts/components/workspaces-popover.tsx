@@ -19,7 +19,7 @@ export type WorkspacesPopoverProps = ButtonBaseProps & {
   data?: {
     id: string;
     name: string;
-    logo: string;
+    logo: JSX.Element | string;
     plan: string;
   }[];
 };
@@ -45,12 +45,15 @@ export function WorkspacesPopover({ data = [], sx, ...other }: WorkspacesPopover
     [handleClosePopover]
   );
 
-  const renderAvatar = (alt: string, src: string) => (
-    <Box component="img" alt={alt} src={src} sx={{ width: 24, height: 24, borderRadius: '50%' }} />
-  );
+  const renderAvatar = (alt: string, logo: JSX.Element | string) => {
+    if (typeof logo === 'string') {
+      return <Box component="img" alt={alt} src={logo} sx={{ width: 24, height: 24, borderRadius: '50%' }} />;
+    }
+    return logo;
+  };
 
   const renderLabel = (plan: string) => (
-    <Label color={plan === 'Free' ? 'default' : 'info'}>{plan}</Label>
+    plan ? <Label color={plan === 'Free' ? 'default' : 'info'}>{plan}</Label> : null
   );
 
   return (

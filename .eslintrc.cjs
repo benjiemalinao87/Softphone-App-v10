@@ -13,11 +13,18 @@ module.exports = {
     project: './tsconfig.json',
   },
   settings: {
+    'import/core-modules': ['@twilio/voice-sdk'],
     'import/resolver': {
-      typescript: {
-        project: './tsconfig.json',
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+        paths: ['.']
       },
-    },
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json'
+      }
+    }
   },
   /**
    * 0 ~ 'off'
@@ -105,5 +112,12 @@ module.exports = {
         'internal-pattern': ['src/**'],
       },
     ],
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: true,
+      optionalDependencies: false,
+      peerDependencies: false,
+      packageDir: __dirname,
+      includeTypes: true
+    }]
   },
 };

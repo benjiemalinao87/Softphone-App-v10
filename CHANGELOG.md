@@ -2,9 +2,12 @@
 
 ###### Aug 24, 2024
 
-- [New] Migrate to typescript.
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions.
+- [✅] Migrate to typescript.
+- [✅] Upgrade and restructure the directory.
+- [✅] Upgrade some dependencies to the latest versions.
+- [NEW] Added Softphone functionality with Twilio integration
+- [NEW] Implemented call metrics dashboard
+- [NEW] Added multi-step configuration wizard
 
 ---
 
@@ -12,9 +15,9 @@
 
 ###### Wed 11, 2023
 
-- [New] Migrate to vite.js.
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions
+- [✅] Migrate to vite.js.
+- [✅] Upgrade and restructure the directory.
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -22,7 +25,7 @@
 
 ###### Feb 21, 2023
 
-- Upgrade some dependencies to the latest versions
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -30,8 +33,8 @@
 
 ###### Oct 17, 2022
 
-- Upgrade and restructure the directory.
-- Upgrade some dependencies to the latest versions
+- [✅] Upgrade and restructure the directory.
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -39,8 +42,8 @@
 
 ###### Jul 04, 2022
 
-- Support react 18.
-- Upgrade some dependencies to the latest versions
+- [✅] Support react 18.
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -48,12 +51,12 @@
 
 ###### Apr 12, 2022
 
-- Update `src/components`.
-- Update `src/sections`.
-- Update `src/pages`.
-- Update `src/layouts`.
-- Update `src/theme`.
-- Upgrade some dependencies to the latest versions
+- [✅] Update `src/components`.
+- [✅] Update `src/sections`.
+- [✅] Update `src/pages`.
+- [✅] Update `src/layouts`.
+- [✅] Update `src/theme`.
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -61,9 +64,9 @@
 
 ###### Feb 21, 2022
 
-- Support react-script v5.0.0
-- Source code improvement
-- Upgrade some dependencies to the latest versions
+- [✅] Support react-script v5.0.0
+- [✅] Source code improvement
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -71,10 +74,10 @@
 
 ###### Sep 18, 2021
 
-- Support MIU v5.0.0 official release
-- Upgrade some dependencies to the latest versions
-- Update `src/theme/typography.js`
-- Upgrade some dependencies to the latest versions
+- [✅] Support MIU v5.0.0 official release
+- [✅] Upgrade some dependencies to the latest versions
+- [✅] Update `src/theme/typography.js`
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 
@@ -82,8 +85,8 @@
 
 ###### Jul 23, 2021
 
-- Support MUI v5.0.0-beta.1
-- Upgrade some dependencies to the latest versions
+- [✅] Support MUI v5.0.0-beta.1
+- [✅] Upgrade some dependencies to the latest versions
 
 ---
 

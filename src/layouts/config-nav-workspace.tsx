@@ -1,22 +1,24 @@
+import { Iconify } from 'src/components/iconify';
+
 // ----------------------------------------------------------------------
 
 export const _workspaces = [
   {
-    id: 'team-1',
-    name: 'Team 1',
-    logo: `/assets/icons/workspaces/logo-1.webp`,
-    plan: 'Free',
+    id: 'main',
+    name: 'Main',
+    logo: <Iconify width={24} icon="solar:home-2-bold-duotone" />,
+    plan: '',
   },
   {
-    id: 'team-2',
-    name: 'Team 2',
-    logo: `/assets/icons/workspaces/logo-2.webp`,
-    plan: 'Pro',
+    id: 'livechat',
+    name: 'Livechat',
+    logo: <Iconify width={24} icon="solar:chat-round-dots-bold-duotone" />,
+    plan: '',
   },
   {
-    id: 'team-3',
-    name: 'Team 3',
-    logo: `/assets/icons/workspaces/logo-3.webp`,
-    plan: 'Pro',
+    id: 'agent-tools',
+    name: 'Agent Tools',
+    logo: <Iconify width={24} icon="solar:widget-bold-duotone" />,
+    plan: '',
   },
 ];
