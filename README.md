@@ -2,6 +2,22 @@
 
 A modern web application for managing and monitoring call center operations, built with React and Material-UI.
 
+## Project Structure
+
+```
+chau/
+├── backend/           # Express.js server
+│   ├── server.js     # Main server file
+│   └── .env          # Backend environment variables
+│
+├── frontend/         # React frontend
+│   ├── src/         # Source files
+│   ├── public/      # Static files
+│   └── vite.config.ts # Vite configuration
+│
+└── package.json     # Root package.json for managing workspaces
+```
+
 ## Features
 
 - 📞 Softphone Integration with Twilio
@@ -26,17 +42,12 @@ A modern web application for managing and monitoring call center operations, bui
   - Historical call data
   - Performance insights
 
-- 🎨 Modern UI/UX
-  - Material Design
-  - Responsive layout
-  - Dark/light mode support
-
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js >= 16.x
-- npm >= 8.x
+- Node.js >= 20.x
+- Yarn >= 1.22.x
 
 ### Installation
 
@@ -48,52 +59,52 @@ cd CHAU
 
 2. Install dependencies
 ```bash
-npm install
+yarn install
 ```
 
 3. Set up environment variables
 ```bash
-cp .env.example .env
+cp backend/.env.example backend/.env
 ```
-Edit `.env` with your configuration:
+Edit `backend/.env` with your configuration:
 - Twilio credentials
 - API endpoints
 - Other environment-specific settings
 
-4. Start the development server
+4. Start development servers
 ```bash
-npm run dev
+# Start both frontend and backend in development mode
+yarn dev
+
+# Or start them separately:
+yarn workspace chau-frontend dev
+yarn workspace chau-backend dev
 ```
 
-## Navigation
+## Deployment
 
-The application features a streamlined navigation system:
+### Railway Deployment
 
-1. Main Menu
-   - Quick access to the main dashboard
-   - Overview of key metrics and features
+1. Create a new project on Railway
+2. Connect your GitHub repository
+3. Add the following environment variables in Railway:
+   - `NODE_ENV=production`
+   - `PORT=8000`
+   - All Twilio-related environment variables
 
-2. Agent Tools
-   - Access to agent-specific functionalities
-   - Performance monitoring tools
+4. Configure the build settings:
+   - Build Command: `yarn build`
+   - Start Command: `yarn start`
 
-3. Configure Softphone
-   - Multi-step setup wizard
-   - Phone system configuration
+### Production Build
 
-4. Livechat
-   - Integrated Qonvo.ai chat interface
-   - Real-time customer communication
+```bash
+# Build both frontend and backend
+yarn build
 
-## Configuration
-
-The application requires initial setup through the configuration wizard:
-
-1. Configure inbound/outbound call settings
-2. Enter Twilio credentials
-3. Select phone numbers
-4. Set up Ngrok URL for webhooks
-5. Review and confirm settings
+# Start production server
+yarn start
+```
 
 ## Documentation
 

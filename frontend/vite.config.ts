@@ -13,8 +13,7 @@ export default defineConfig({
     checker({
       typescript: true,
       eslint: {
-        lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
-        dev: { logLevel: ['error'] },
+        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
       },
       overlay: {
         position: 'tl',
@@ -34,6 +33,20 @@ export default defineConfig({
       },
     ],
   },
-  server: { port: PORT, host: true },
+  server: {
+    port: 3000,
+    host: true,
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_URL || 'http://localhost:8000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
   preview: { port: PORT, host: true },
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
+  },
 });

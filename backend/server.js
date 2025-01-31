@@ -328,6 +328,11 @@ app.post('/api/twilio/configure-webhooks', async (req, res) => {
   }
 });
 
+// Health check endpoint for Railway deployment
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', timestamp: new Date().toISOString() });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
   console.log('Webhook base URL:', BASE_URL);
